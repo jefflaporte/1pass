@@ -18,7 +18,7 @@ class AgileKeychain
   		inform_and_exit(INVALID_PASSWORD) unless @keychain.unlock(master_password)
   		key = @keychain.get(key_name)
   		inform_and_exit(INVALID_KEY) unless key
-  		puts field_name ? key.find(field_name) : key.fields
+  		return field_name ? key.find(field_name) : key.fields
 	end
 
 	private
